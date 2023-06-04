@@ -6,14 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Timeless One-Page HTML Template</title>
-<!-- 
-
-Timeless Template 
-
-http://www.templatemo.com/tm-517-timeless
-
--->
+    <title>Intersection of Universes</title>
     <!-- load CSS -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">
     <!-- Google web font "Open Sans" -->
@@ -21,16 +14,77 @@ http://www.templatemo.com/tm-517-timeless
     <!-- https://getbootstrap.com/ -->
     <link rel="stylesheet" href="css/templatemo-style.css">
     <!-- Templatemo style -->
+
+    <!-- dropdown menu -->
+
+    <style>
+.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+</style>
+
 </head>
 
 <body>
+
+<!-- dropdown menu -->
+
+
+<h2>Clickable Dropdown</h2>
+<p>Click on the button to open the dropdown menu.</p>
+
+<div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+</div>
+
+<!-- page -->
 
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <header class="text-center tm-site-header">
                     <div class="tm-site-logo"></div>
-                    <h1 class="pl-4 tm-site-title">Timeless</h1>
+                    <h1 class="pl-4 tm-site-title">IoU</h1>
                 </header>
             </div>
         </div>
@@ -44,10 +98,7 @@ http://www.templatemo.com/tm-517-timeless
                         <div id="tm-video-text-overlay" class="tm-video-text-overlay d-none">
                             <h1>
                                 <div id="rotate" class="tm-video-text">
-                                    <div>This is timeless</div>
-                                    <div>We are invincible</div>
-                                    <div>Quite unbeatable</div>
-                                    <div>and indestructible</div>
+                                    <div>Intersection of Universes</div>
                                 </div>
                             </h1>
                         </div>
@@ -59,7 +110,7 @@ http://www.templatemo.com/tm-517-timeless
         <div class="container tm-container-2">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2 class="tm-welcome-text">Welcome to Timeless</h2>
+                    <h2 class="tm-welcome-text">Intersection of Universes : Forbidden Zone</h2>
                 </div>
             </div>
             <div class="row tm-section-mb">
@@ -193,8 +244,8 @@ http://www.templatemo.com/tm-517-timeless
         <footer class="row mt-5 mb-5">
             <div class="col-lg-12">
                 <p class="text-center tm-text-gray tm-copyright-text mb-0">Copyright &copy;
-                    <span class="tm-current-year">2018</span> Your Company Name 
-                    
+                    <span class="tm-current-year">2018</span> Your Company Name
+
                     | Design: <a href="http://templatemo.com/tm-517-timeless" class="tm-text-white">Timeless</a>
                 </p>
             </div>
@@ -205,6 +256,31 @@ http://www.templatemo.com/tm-517-timeless
     <script src="js/jquery.min.js"></script>
     <!-- <script src="js/jquery-3.2.1.slim.min.js"></script> -->
     <script src="js/templatemo-script.js"></script>
+
+
+<!-- dropdown js -->
+
+<script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
 
 </body>
 </html>
