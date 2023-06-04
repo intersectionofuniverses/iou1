@@ -15,63 +15,122 @@
     <link rel="stylesheet" href="css/templatemo-style.css">
     <!-- Templatemo style -->
 
-    <!-- dropdown menu -->
+    <!-- dropdown css -->
 
-    <style>
-.dropbtn {
-  background-color: #3498DB;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-}
+<style>
+    label .menu {
+      position: absolute;
+      right: -100px;
+      top: -100px;
+      z-index: 100;
+      width: 200px;
+      height: 200px;
+      background: #FFF;
+      border-radius: 50% 50% 50% 50%;
+      -webkit-transition: .5s ease-in-out;
+      transition: .5s ease-in-out;
+      box-shadow: 0 0 0 0 #FFF, 0 0 0 0 #FFF;
+      cursor: pointer;
 
-.dropbtn:hover, .dropbtn:focus {
-  background-color: #2980B9;
-}
+    }
 
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
+    label .hamburger {
+      position: absolute;
+      top: 135px;
+      left: 50px;
+      width: 30px;
+      height: 2px;
+      background: #69D2e7;
+      display: block;
+      -webkit-transform-origin: center;
+      transform-origin: center;
+      -webkit-transition: .5s ease-in-out;
+      transition: .5s ease-in-out;
+    }
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  overflow: auto;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
+    label .hamburger:after, label .hamburger:before {
+      -webkit-transition: .5s ease-in-out;
+      transition: .5s ease-in-out;
+      content: "";
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: #69d2e7;
+    }
 
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
+    label .hamburger:before { top: -10px; }
 
-.dropdown a:hover {background-color: #ddd;}
+    label .hamburger:after { bottom: -10px; }
 
-.show {display: block;}
+    label input { display: none; }
+
+    label input:checked + .menu {
+      box-shadow: 0 0 0 100vw #FFF, 0 0 0 100vh #FFF;
+      border-radius: 0;
+
+    }
+
+    label input:checked + .menu .hamburger {
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+
+    }
+
+    label input:checked + .menu .hamburger:after {
+      -webkit-transform: rotate(90deg);
+      transform: rotate(90deg);
+      bottom: 0;
+
+    }
+
+    label input:checked + .menu .hamburger:before {
+      -webkit-transform: rotate(90deg);
+      transform: rotate(90deg);
+      top: 0;
+
+    }
+
+    label input:checked + .menu + ul { opacity: 1; }
+
+    label ul {
+      z-index: 200;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      -webkit-transition: .25s 0s ease-in-out;
+      transition: .25s 0s ease-in-out;
+    }
+
+    label a {
+      margin-bottom: 1em;
+      display: block;
+      color: #f38630;
+      text-decoration: none;
+
+    }
+
 </style>
 
 </head>
 
 <body>
 
-<!-- dropdown menu -->
+  <!--dropdown -->
 
-<div class="dropdown">
-  <button onclick="myFunction()" class="dropbtn">Dropdown</button>
-  <div id="myDropdown" class="dropdown-content">
-    <a href="1.html">1</a>
-    <a href="2.html">2</a>
-    <a href="3.html">3</a>
-  </div>
-</div>
+  <label>
+  <input type="checkbox">
+  <span class="menu"> <span class="hamburger"></span> </span>
+  <ul>
+    <li> <a href="#">Home</a> </li>
+    <li> <a href="#">About</a> </li>
+    <li> <a href="#">Contact</a> </li>
+  </ul>
+  </label>
+  <h1>Morphing Fullscreen Hamburger Menu Demo</h1>
 
 <!-- page -->
 
@@ -182,11 +241,8 @@
 
                 </div>
             </div>
-            <!--  row -->
-            <hr>
 
             </div>
-            <hr>
 
         </div>
         <hr>
@@ -208,27 +264,6 @@
 
 <!-- dropdown js -->
 
-<script>
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
-</script>
 
 </body>
 </html>
