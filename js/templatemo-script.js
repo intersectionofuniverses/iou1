@@ -1,4 +1,11 @@
 // https://codepen.io/AmruthPillai/pen/axvqB
+
+function toggleMobileMenu(menu) {
+    menu.classList.toggle('open');
+}
+
+
+
 (function ($) {
     $.fn.extend({
         rotaterator: function (options) {
